@@ -8,12 +8,17 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/bootstrap-select.css">
   <link rel="stylesheet" href="css/bootstrap-markdown.min.css">
+  <link rel="stylesheet" href="css/style.css">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
   <script src="js/bootstrap-select.js"></script>
   <script src="js/bootstrap-markdown.js"></script>
   <script src="locale/bootstrap-markdown.zh.js"></script>
+  <script src="js/jquery.hotkeys.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/jquery.filedrop.js"></script>
+  <script src="js/markdown.js"></script>
   <style>
 .btn-group.bootstrap-select select {
 width: 1px !important;
@@ -38,7 +43,7 @@ body{margin-top: 20px;font-family:"Microsoft YaHei"!important}
             <input class="form-control" style="margin-left:-11%;width:111%" required placeholder="文章标题"/>
           </div>
         </div>
-        <textarea id="content" name="content" rows="10" class="form-control" placeholder="文章内容" ></textarea>
+        <textarea id="comment-md" name="content" rows="10" class="form-control" placeholder="文章内容" ></textarea>
         <div style="margin-bottom:20px;"></div>
         <select id="basic" class="selectpicker show-tick form-control" data-live-search="true" required >
           <option value="">请选择标签...</option>
@@ -55,12 +60,39 @@ body{margin-top: 20px;font-family:"Microsoft YaHei"!important}
         </select>
         <div style="margin-bottom:20px;"></div>
         <button type="submit" class="form-control btn btn-primary">提交</button>
+        <hr>
+        <div id="comment-md-preview-container">
+                      <div class="well well-sm well-light md-preview" id="comment-md-preview" ></div>
+                  </div>
+       </div>
     </div>
 
   </form>
- </div>
+
  <script>
-$("#content").markdown({autofocus:false,savable:false,language:"zh"})
+ //$("#comment-md").markdown({autofocus:false,savable:false})
+ //编辑器支持tab键
+     document.querySelector("textarea").addEventListener('keydown',function(e) {
+         if(e.keyCode === 9) { // tab was pressed
+             // get caret position/selection
+             var start = this.selectionStart;
+             var end = this.selectionEnd;
+
+             var target = e.target;
+             var value = target.value;
+
+             // set textarea value to: text before caret + tab + text after caret
+             target.value = value.substring(0, start)
+                     + "\t"
+                     + value.substring(end);
+
+             // put caret at right position again (add one for the tab)
+             this.selectionStart = this.selectionEnd = start + 1;
+
+             // prevent the focus lose
+             e.preventDefault();
+         }
+     },false);
  </script>
 </body>
 </html>
