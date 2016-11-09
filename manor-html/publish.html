@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bootstrap-select test page</title>
+
+  <meta charset="utf-8">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/bootstrap-select.css">
+  <link rel="stylesheet" href="css/bootstrap-markdown.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <script src="js/bootstrap-select.js"></script>
+  <script src="js/bootstrap-markdown.js"></script>
+  <script src="locale/bootstrap-markdown.zh.js"></script>
+  <style>
+.btn-group.bootstrap-select select {
+width: 1px !important;
+}
+body{margin-top: 20px;font-family:"Microsoft YaHei"!important}
+  </style>
+</head>
+<body>
+
+ <div class="container">
+ <form class="form-horizontal" role="form" action="">
+    <div class="form-group">
+        <div class="row" style="margin-bottom:20px;">
+          <div class="col-xs-2">
+            <select name="type" class="selectpicker show-tick from-control" data-width="54%">
+                <option>原创</option>
+                <option>转载</option>
+                <option>翻译</option>
+            </select>
+          </div>
+          <div class="col-xs-10">
+            <input class="form-control" style="margin-left:-11%;width:111%" required placeholder="文章标题"/>
+          </div>
+        </div>
+        <textarea id="content" name="content" rows="10" class="form-control" placeholder="文章内容" ></textarea>
+        <div style="margin-bottom:20px;"></div>
+        <select id="basic" class="selectpicker show-tick form-control" data-live-search="true" required >
+          <option value="">请选择标签...</option>
+          <optgroup label="语言" data-subtext="">
+            <option value="1">Java</option>
+            <option data-subtext="">C</option>
+            <option class="get-class">PHP</option>
+          </optgroup>
+          <optgroup label="框架" data-subtext="">
+            <option>Spring</option>
+            <option>Mybatis</option>
+            <option>Shiro</option>
+          </optgroup>
+        </select>
+        <div style="margin-bottom:20px;"></div>
+        <button type="submit" class="form-control btn btn-primary">提交</button>
+    </div>
+
+  </form>
+ </div>
+ <script>
+$("#content").markdown({autofocus:false,savable:false,language:"zh"})
+ </script>
+</body>
+</html>
