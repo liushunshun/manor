@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+
+<!-- Mirrored from www.zi-han.net/theme/hplus/index_v5.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Jan 2016 14:18:51 GMT -->
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>H+ 后台主题UI框架 - 首页示例四</title>
+
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link href="css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+    <link href="css/xy.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="navbar navbar-default" role="navigation" style="background:#fff;height:15px" >
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand font_0" th:href="@{/blog/list}">
+                <span style="line-height: 1.4em;"><span class="color_18"><b>Manor blog</b></span></span>
+            </a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a th:href="@{/blog/list}">首页</a></li>
+                <li><a th:href="@{/blog/md}">排行榜</a></li>
+                <li><a th:href="@{/blog/md}">博客专家</a></li>
+            </ul>
+            <form class="navbar-form navbar-right" role="search" style="margin-top: 7px;" action="@{/blog/list}">
+                <div class="form-group">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="输入关键字" name="title"/>
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="submit">
+                                    <!--<span class="glyphicon glyphicon-search" aria-hidden="true"></span>-->
+                                    搜索
+                                </button>
+                            </span>
+                    </div>
+                    <!-- /input-group -->
+                </div>
+            </form>
+        </div>
+        <!-- 导航结束 -->
+        <div class="row" style="margin-top:10px">
+          <div class="col-md-9">
+            <div class="ibox-content row">
+              <div class="col-md-3" >
+                <div style="padding:10px 50px;">
+                  <span><img alt="image" class="img-circle" src="img/profile_small.jpg"/></span>
+                  <br>
+                  <span style="">XiuYangzi</span>
+                </div>
+              </div>
+              <div class="col-md-9">
+                <h3><a href="#">使用layoutinflater的正确姿势</a></h3>
+                android安装应用分两种，一种是直接调用PKMS的接口安装，另一种是扫描目录安装，比如系统开机的时候会扫描data/app目录进行安装。 一、调用installPackageAsUser函数安...
+                <br>
+                <br>
+                <div class="row">
+                  <div class="col-md-9">
+                    <span><i class="fa fa-list-ul" style="margin-right:5px"></i><a href="/mobile/newarticle.html" target="_blank">移动开发</a></span>
+                  </div>
+                  <div class="col-md-3">
+                    <label style="color:#999;font-size:12px;font-weight:10px">三分钟前</label>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="ibox-content row">
+              <div class="col-md-3" >
+                <div style="padding:10px 50px;">
+                  <span><img alt="image" class="img-circle" src="img/profile_small.jpg"/></span>
+                  <br>
+                  <span style="">XiuYangzi</span>
+                </div>
+              </div>
+              <div class="col-md-9">
+                <h3><a href="#">使用layoutinflater的正确姿势</a></h3>
+                android安装应用分两种，一种是直接调用PKMS的接口安装，另一种是扫描目录安装，比如系统开机的时候会扫描data/app目录进行安装。 一、调用installPackageAsUser函数安...
+                <br>
+                <br>
+                <div class="row">
+                  <div class="col-md-9">
+                    <span><i class="fa fa-list-ul" style="margin-right:5px"></i><a href="/mobile/newarticle.html" target="_blank">移动开发</a></span>
+                  </div>
+                  <div class="col-md-3">
+                    <label style="color:#999;font-size:12px;font-weight:10px">三分钟前</label>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 ">
+            <div class="ibox-content">博文分类</div>
+          </div>
+        </div>
+
+
+    </div>
+  </div>
+
+</html>
